@@ -59,37 +59,56 @@ let restaurant1 = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
+      let resultado = this.restaurants.filter(
+        function (restaurante) {
+        let  availableSeat =  restaurante.totalSeats - restaurante.numberOfCustomers;
+        
+          return availableSeat  >= numberOfPeople;
+      })
+     console.log( resultado.map(restaurante => restaurante.name));
       // Complete here
     },
     findRestaurantServingDish: function (dishName) {
+      let resultado = this.restaurants.filter(
+        restaurante => restaurante.menu.includes(dishName)
+      )
+      console.log( resultado.map(restaurante => restaurante.name))
       // Complete here
     },
     countNumberOfRestaurantsInArea: function (area) {
+      let resultado = this.restaurants.filter(
+        restaurante => restaurante.address.area === area
+      )
+      console.log( resultado.length);
       // Complete here
     },
   };
-  
+
+  restaurantFinderApplication.findAvailableRestaurants(5)
+ 
+  restaurantFinderApplication.findRestaurantServingDish("salad")
+  restaurantFinderApplication.countNumberOfRestaurantsInArea("center")
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
   */
   
-  let restaurantsAvailableFor5People = restaurantFinderApplication.findAvailableRestaurants(
-    5
-  );
-  console.log(
-    `Find available restaurants for 5 people: Expected result: Ubiquitous Chip,Monkeyz, actual result: ${restaurantsAvailableFor5People}`
-  );
+//   let restaurantsAvailableFor5People = restaurantFinderApplication.findAvailableRestaurants(
+//     5
+//  );
+  // console.log(
+  //   `Find available restaurants for 5 people: Expected result: Ubiquitous Chip,Monkeyz, actual result: ${restaurantsAvailableFor5People}`
+  // );
   
-  let restaurantsServingSalad = restaurantFinderApplication.findRestaurantServingDish(
-    "salad"
-  );
-  console.log(
-    `Find restaurants serving salad: Expected result: Paesano,Ubiquitous Chip, actual result: ${restaurantsServingSalad}`
-  );
+  // let restaurantsServingSalad = restaurantFinderApplication.findRestaurantServingDish(
+  //   "salad"
+  // );
+  // console.log(
+  //   `Find restaurants serving salad: Expected result: Paesano,Ubiquitous Chip, actual result: ${restaurantsServingSalad}`
+  // );
   
-  let numberOfRestaurantsInCityCentre = restaurantFinderApplication.countNumberOfRestaurantsInArea(
-    "center"
-  );
-  console.log(
-    `Number of restaurants in city centre: Expected result: 2, actual result: ${numberOfRestaurantsInCityCentre}`
-  );
+  // let numberOfRestaurantsInCityCentre = restaurantFinderApplication.countNumberOfRestaurantsInArea(
+  //   "center"
+  // );
+  // console.log(
+  //   `Number of restaurants in city centre: Expected result: 2, actual result: ${numberOfRestaurantsInCityCentre}`
+  // );

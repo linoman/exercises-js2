@@ -16,15 +16,34 @@ let coffeeMachine = {
       flatWhite: 3.0,
     },
     insertedAmount: 0,
-    insertMoney: function (amount) {},
-    getCoffee: function (coffee) {},
+    insertMoney: function (amount) {
+     let amounta = [];
+    
+    if (  amounta >= coffeeMachine.prices) {
+  console.log(amount)
+      
+    } else  {
+      return "no hay suficiente dinero";
+      
+    }
+  
+    },
+    getCoffee: function (coffee) {
+     if (coffee >= coffeeMachine) {
+      return coffee;
+       
+     }else {
+      return "no hay suficiente dinero";
+      
+    }
+    },
   };
   
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
   */
   
-  coffeeMachine.insertMoney(2.4);
+  coffeeMachine.insertMoney(1.4);
   console.log(
     `Expected result: 'Please take your cappuccino'. Actual result: ${coffeeMachine.getCoffee(
       "cappuccino"

@@ -39,6 +39,8 @@ var writers = [
   },
 ];
 
+console.log("Hi, my name is", writers[1].firstName, writers[1].lastName,"I am ",writers[1].age," years old, and work as a",writers[1].occupation)
+
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */

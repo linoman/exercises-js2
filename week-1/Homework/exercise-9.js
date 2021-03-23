@@ -42,8 +42,23 @@ var product2 = {
   stock: 2
 };
 
-products.push(product1);
-products.push(product2);
+var product3 = {
+  id: 1,
+  name: "Toaster X56 Plus",
+  price: 12.98,
+  stock: 105
+};
+var product4 = {
+  id: 1,
+  name: "Toaster X56 Plus",
+  price: 12.98,
+  stock: 105
+};
+
+ products.push(product1);
+ products.push(product2);
+ products.push(product3);
+ products.push(product4);
 
 var shoppingCart = {
   totalPrice: 0,

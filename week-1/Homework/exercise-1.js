@@ -33,20 +33,43 @@ let parkAvenueHouse = {
 */
 
 // returns the full name (first name + last name) of the owner of the house
-function getOwnerFullName(house) {}
+function getOwnerFullName(house) {
+  return house = kinningParkHouse.currentOwner.firstName  +  kinningParkHouse.currentOwner.lastName;
+}
 
 // returns an array of the owners' email addresses of the two houses
-function getEmailAddresses(house1, house2) {}
+function getEmailAddresses(house1, house2) {
+  
+  const array1=[house1,house2]
+  array1.sort((a, b) => {
+    console.log('a',a.currentOwner.email)
+    console.log('b',b.currentOwner.email)
+    console.log(a.currentOwner.email > b.currentOwner.email)
+  })
+return house1  = house2 =kinningParkHouse.currentOwner.email  +  parkAvenueHouse.currentOwner.email
+}
 
 // returns the address for the cheapest house out of the two
-function getCheapestAddress(house1, house2) {}
+function getCheapestAddress(house1, house2) {
+  
+  console.log('> House Address')
+  const array=[house1,house2]
+   array.sort((a, b) => {
+    console.log('a',a.price)
+    console.log('b',b.price)
+    console.log(a.price < b.price)
+    return a.price - b.price;
+  })
+  return house1 = house2 = kinningParkHouse.address ;
+}
+
 
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
 */
 console.log(
   `Expected result: Margaret Conway. Actual result: ${getOwnerFullName(
-    kinningParkHouse
+    kinningParkHouse.currentOwner
   )}`
 );
 console.log(
