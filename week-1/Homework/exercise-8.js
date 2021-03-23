@@ -50,6 +50,9 @@ var mentors = [
     skills: ["JS","React","Node"],
     class: "Mar1",
     studentLikes: 0,
+    addskills :function(newSkill){
+      this.skills.push(newSkill)
+    },
     job:
       {
         company: "Google",
@@ -63,6 +66,9 @@ var mentors = [
     skills: ["Play football"],
     class: "Mar3",
     studentLikes: 0,
+    addskills :function(newSkill){
+      this.skills.push(newSkill)
+    },
     job:
       {
         company: "FC Barcelona",
@@ -76,6 +82,9 @@ var mentors = [
     skills: ["React","Angular","Python","Node"],
     class: "Mar4",
     studentLikes: 0,
+    addskills :function(newSkill){
+      this.skills.push(newSkill)
+    },
     job:
       {
         company: "Facebook",
@@ -89,6 +98,9 @@ var mentors = [
     skills: ["HTML","JS","React"],
     class: "Mar2",
     studentLikes: 0,
+    addskills :function(newSkill){
+      this.skills.push(newSkill)
+    },
     job:
       {
         company: "Amazon",
@@ -96,8 +108,13 @@ var mentors = [
         city: "Barcelona"
       }
   },
+ 
+ 
 
 ];
+
+
+
 
 //YOUR CODE HERE
 mentors.filter(mentor =>{
@@ -107,3 +124,59 @@ mentors.filter(mentor =>{
 }).forEach(mentor => {
  console.log("Hi, my name is " ,mentor.firstName , mentor.lastName," I work in Barcelona and i know React.")
 })
+
+
+
+4.// Create a function to add a skill to all members in a list of mentors
+  function  addskills(mentors,newSkills) {
+    mentors.map(mentor =>{
+      mentor.addskills(newSkills)
+      return mentor;
+
+    })
+    .forEach(mentor => console.log(mentor.skills));
+  }
+
+  addskills(mentors,"SQL")
+
+  console.log(mentors)
+
+  5.// Create a function to remove a skill to all members in a list of mentors
+
+  function removeSkill(mentors,newSkill){
+    mentors.map(mentor => {
+      mentor.skills.splice(mentor.skills.indexOf(newSkill));
+      return mentor;
+    })
+    .forEach(mentor => console.log(mentor.skills))
+  }
+  
+  removeSkill(mentors, "")
+ 
+  6.// Create a function mentorWithMoreSkills() that returns the name of the mentor with more number of skills
+
+  function mentorWithMoreSkills(){
+    mentors.sort((a,b) => {
+      return b.skills - a.skills.length 
+    })[0].firstName;
+  }
+ mentorWithMoreSkills()
+
+  7.// Create an object method .addStudentLikes() that increments by one the attribute studentLikes
+
+
+  function addStudentLikes(mentors){
+    mentors.forEach(mentor =>{
+      mentor.addStudentLikes() = function() {
+        this.studentLikes++;
+        
+      }
+    })
+  
+    //your code here
+  }
+
+ 
+  8.// Create a function that adds a student like to all mentors in the array
+   
+  mentors.forEach(mentor => console.log(mentor.studentLikes))
