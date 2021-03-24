@@ -1,6 +1,7 @@
 
-alert("hello");
-var myButton = document.querySelector("#myButton");
+// alert("hello");
+// console.log("hello")
+var myButton = document.querySelector("#title");
 myButton.addEventListener("click", sayHi);
 
 function sayHi() {
