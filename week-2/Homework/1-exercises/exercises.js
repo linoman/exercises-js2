@@ -110,9 +110,9 @@ function exerciseThree(books) {
   let ulLista = document.createElement("ul")
   content.appendChild(ulLista)
 
-  let img1 = '/img/telechager1.jpg';
-  let img2 = "/img/telecharger2.jpg";
-  let img3 = "/img/telecharger3.jpg";
+  let img1 = "./img/telechager1.jpg";
+  let img2 = "./img/telecharger2.jpg";
+  let img3 = "./img/telecharger3.jpg";
   let imgs = [img1,img2,img3]
 
   books.forEach((book,index) => {
