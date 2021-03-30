@@ -12,20 +12,68 @@
  *      <h2>{Job Here}</h2>
  *      .....
  * </div>
+ * 
+ * 
  */
+ let people = [
+  { name: "Chris", job: "Teacher" },
+  { name: "Joanna", job: "Student" },
+  { name: "Boris", job: "Prime Minister" }
+];
+exerciseOne(people)
+
+
+
+
+
 function exerciseOne(arrayOfPeople) {
+  
   let content = document.querySelector("#content");
+
+ 
+arrayOfPeople.map(people => {
+  let nameHead = document.createElement("h1");
+  let nameJob = document.createElement("h2");
+
+  content.appendChild(nameHead);
+  content.appendChild(nameJob);
+
+  nameHead.innerText = people.name
+  nameJob.innerText = people.job
+
+})
 }
+
+
+
+
 
 /**
  *
  * Create a list of shopping items. You should use an unordered list.
  *
  * All of your HTML should go inside the Div tag with the id "content".
+ * 
  *
  */
+
+ let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
+
+ exerciseTwo(shopping);
+
+
 function exerciseTwo(shopping) {
-  //Write your code in here
+  let content = document.querySelector("#content");
+  const listUl = document.createElement("ul")
+   listUl.innerText = "Supermercado";
+   listUl.style.fontStyle ="cursive"
+   listUl.style.fontSize = 20 
+   content.appendChild(listUl)
+ shopping.map(producto => {
+   let items= document.createElement("li")
+   listUl.appendChild(items)
+   items.innerText = producto
+ })
 }
 
 /**
@@ -58,7 +106,33 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+  let content = document.querySelector("#content")
+  let ulLista = document.createElement("ul")
+  content.appendChild(ulLista)
+
+  let img1 = '/img/telechager1.jpg';
+  let img2 = "/img/telecharger2.jpg";
+  let img3 = "/img/telecharger3.jpg";
+  let imgs = [img1,img2,img3]
+
+  books.forEach((book,index) => {
+    // Objetos declarado
+    let parafo = document.createElement("p");
+    let listPara = document.createElement("li");
+    let img = document.createElement("img")
+    // valores
+    parafo.textContent =` titulo es: ${ book.title} - author es: ${ book.title}`;
+    img.src= imgs[index] ;
+    // append
+    ulLista.appendChild(listPara);
+    listPara.appendChild(parafo);
+    listPara.appendChild(img);
+
+
+  });
+
+
+ 
 }
 
 //
@@ -71,17 +145,9 @@ function exerciseThree(books) {
 //
 //
 
-let people = [
-  { name: "Chris", job: "Teacher" },
-  { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
-];
 
-exerciseOne(people);
 
-let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
 
-exerciseTwo(shopping);
 
 const books = [
   {

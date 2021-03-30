@@ -1,29 +1,33 @@
-/**
+/* *
  * Base styles to use at the start of the class
  *
  * Module: HTML/CSS
  * Lesson: 1,2
  * Class: Scotland 2017
  */
-
+/* 
 html,
 body {
 	font-family: "Source Sans Pro",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	background: tomato;
 }
 
 .site-footer {
 	margin-top: 4em;
+	
 }
 
 .site-footer p {
 	border-top: 1px solid #dccdc6;
 	padding-top: 2em;
 	padding-bottom: 2em;
+	
 }
 
 .navbar-brand > img {
 	max-height: 40px;
 	width: auto;
+	
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -33,12 +37,12 @@ body {
 }
 
 /* Buttons */
-.btn {
+/* .btn {
 	border-radius: 0.15em;
 }
 
 /* Alert */
-.alert {
+/* .alert {
 	position: relative;
 	margin-top: 2em;
 	margin-bottom: 3em;
@@ -50,9 +54,9 @@ body {
 	line-height: 1.3em;
 	background: transparent;
 	color: #292b2c;
-}
+} */
 
-.alert:before {
+/* .alert:before {
 	content: '';
 	position: absolute;
 	left: -1px;
@@ -60,15 +64,15 @@ body {
 	height: 100%;
 	width: 1px;
 	background: #ce5f31;
-}
+} */
 
 /* Jumbotron */
-.jumbotron {
+/* .jumbotron {
 	border-radius: 0;
-}
+} */
 
 /* Headings */
-.heading-underline {
+/* .heading-underline {
 	position: relative;
 	margin-bottom: 2em;
 	padding-bottom: 0.5em;
@@ -87,10 +91,10 @@ body {
 	height: 1px;
 	max-width: 100px;
 	background: #ce5f31;
-}
+} */
 
 /* Article */
-.article {
+/* .article {
 	margin-bottom: 2em;
 }
 
@@ -151,9 +155,15 @@ body {
 	background: #87ca8a
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) { */
 
-	.navbar-brand > img {
+	/* .navbar-brand > img {
 	   max-height: 80px;
 	}
+}  */
+
+img {
+	width: 200px;
+	background-color: tomato;
+	
 }
