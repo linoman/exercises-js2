@@ -20,31 +20,25 @@
   { name: "Joanna", job: "Student" },
   { name: "Boris", job: "Prime Minister" }
 ];
-exerciseOne(people)
 
 
 
 
+let content = document.querySelector("#content");
 
 function exerciseOne(arrayOfPeople) {
   
-  let content = document.querySelector("#content");
-
- 
-arrayOfPeople.map(people => {
+ arrayOfPeople.forEach(people => {
   let nameHead = document.createElement("h1");
   let nameJob = document.createElement("h2");
-
-  content.appendChild(nameHead);
-  content.appendChild(nameJob);
-
   nameHead.innerText = people.name
   nameJob.innerText = people.job
-
+  content.appendChild(nameHead);
+  content.appendChild(nameJob);
 })
 }
 
-
+exerciseOne(people)
 
 
 
@@ -59,22 +53,24 @@ arrayOfPeople.map(people => {
 
  let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
 
- exerciseTwo(shopping);
-
+ 
 
 function exerciseTwo(shopping) {
-  let content = document.querySelector("#content");
+  
   const listUl = document.createElement("ul")
    listUl.innerText = "Supermercado";
    listUl.style.fontStyle ="cursive"
    listUl.style.fontSize = 20 
-   content.appendChild(listUl)
- shopping.map(producto => {
-   let items= document.createElement("li")
-   listUl.appendChild(items)
+ 
+ shopping.forEach(producto => {
+   let items = document.createElement("li")
    items.innerText = producto
+   listUl.appendChild(items)
+   
  })
+ content.appendChild(listUl)
 }
+exerciseTwo(shopping);
 
 /**
     I'd like to display my three favorite books inside a nice webpage!
@@ -105,35 +101,7 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
-function exerciseThree(books) {
-  let content = document.querySelector("#content")
-  let ulLista = document.createElement("ul")
-  content.appendChild(ulLista)
 
-  let img1 = "./img/telecharger1.jpg";
-  let img2 = "./img/telecharger2.jpg";
-  let img3 = "./img/telecharger3.jpg";
-  let imgs = [img1,img2,img3]
-
-  books.forEach((book,index) => {
-    // Objetos declarado
-    let parafo = document.createElement("p");
-    let listPara = document.createElement("li");
-    let img = document.createElement("img")
-    // valores
-    parafo.textContent =` titulo es: ${ book.title} - author es: ${ book.title}`;
-    img.src= imgs[index] ;
-    // append
-    ulLista.appendChild(listPara);
-    listPara.appendChild(parafo);
-    listPara.appendChild(img);
-
-
-  });
-
-
- 
-}
 
 //
 //
@@ -167,4 +135,51 @@ const books = [
   }
 ];
 
+function exerciseThree(books) {
+ 
+  let listaLibros = document.createElement("ul")
+  listaLibros.className = "lista-Libros"
+  books.forEach(book => {
+    if (book.title == "The Design of Everyday Things") {
+        book.cover = "./img/telecharger1.jpg"
+      }else if (book.title ==  "The Most Human Human" ) {
+      book.cover = "./img/telecharger2.jpg"
+    }else if (book.title == "The Pragmatic Programmer" ) {
+      book.cover = "./img/telecharger3.jpg"    
+    }   
+  
+    // Objetos declarado
+    let listPara = document.createElement("li");
+    let parafo = document.createElement("p");
+    let imgLink = document.createElement("a")
+      let imageLibro = document.createElement("img")
+    // valores
+    parafo.innerText =` ${ book.title} - ${ book.author}`;
+
+    if (book.alreadyRead == true) {
+      listPara.style.backgroundColor = "green";
+    }else {
+      listPara.style.backgroundColor = "red";      
+    }
+    imgLink.href = book.cover ;
+    imageLibro.src = book.cover ;
+    imageLibro.width = 200;
+    // append
+  
+    imgLink.appendChild(imageLibro);
+    listPara.appendChild(parafo)
+    listPara.appendChild(imgLink);
+  
+    listaLibros.appendChild(listPara)
+    
+
+  })
+
+content.appendChild(listaLibros)
+ 
+}
 exerciseThree(books);
+
+
+
+
