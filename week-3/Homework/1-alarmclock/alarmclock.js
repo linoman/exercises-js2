@@ -1,4 +1,16 @@
-function setAlarm() {}
+
+
+
+function setAlarm() {
+  let btnButon = document.querySelector("#set")
+
+  btnButon.innertext = document.createElement("click")
+let input = document.querySelector("#alarmSet")
+input.innertext =  "number"
+
+btnButon.appendChild(input)
+}
+
 
 // DO NOT EDIT BELOW HERE
 
@@ -9,7 +21,7 @@ function setup() {
     setAlarm();
   });
 
-  document.getElementById("stop").addEventListener("click", () => {
+  document.getElementById("stop").addEventListener("click",  () => {
     pauseAlarm();
   });
 }
