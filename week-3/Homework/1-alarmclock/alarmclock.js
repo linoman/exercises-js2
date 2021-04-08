@@ -1,15 +1,13 @@
 
   let intervalRef = 0;
-  console.log(intervalRef)
-
  
 function setAlarm() {
- 
+  clearInterval(intervalRef);
   let input = document.getElementById("alarmSet").value;
  
 
   
- let intervalRef = setInterval(() => {
+  intervalRef = setInterval(() => {
     let timeRemain = document.getElementById("timeRemaining")
     if (input == 0) {
     
@@ -34,7 +32,6 @@ function setAlarm() {
     timeRemain.innerHTML = `Time Remaining: ${minutes}:${seconds}`;
     input = input - 1;
   }, 1000)
-  console.log(intervalRef)
 
 }
 
@@ -55,7 +52,7 @@ function setup() {
 
   document.getElementById("stop").addEventListener("click",  () => {
     pauseAlarm();
-   
+    clearInterval(intervalRef);
   });
 }
 
